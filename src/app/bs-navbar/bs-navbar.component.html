@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark secondary-color-dark">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Organic Shop</a>
 
   <!-- Collapse button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -23,26 +23,22 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/shopping-cart"><i class="fas fa-shopping-cart"></i>Shopping cart</a>
       </li>
-      
+
       <!-- Dropdown -->
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Dropdown</a>
+          aria-expanded="false">Username</a>
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
+          <a class="dropdown-item" routerLink="admin/orders">Manage Orders</a>
+          <a class="dropdown-item" routerLink="admin/products">Manage Products</a>
+          <a class="dropdown-item">Logout</a>
         </div>
       </li>
 
     </ul>
     <!-- Links -->
 
-    <form class="form-inline">
-      <div class="md-form my-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      </div>
-    </form>
   </div>
   <!-- Collapsible content -->
 
