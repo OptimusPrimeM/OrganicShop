@@ -23,12 +23,36 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/shopping-cart"><i class="fas fa-shopping-cart"></i>Shopping cart</a>
       </li>
-      <li *ngIf="!user" class="nav-item">
+
+      <!-- With repetition -->
+      <!-- <li *ngIf="!(user$| async)" class="nav-item">
         <a class="nav-link" routerLink="/login">Login</a>
-      </li>
+      </li> -->
 
       <!-- Dropdown -->
-      <li class="nav-item dropdown" *ngIf="user">
+      <!-- <li class="nav-item dropdown" *ngIf="user$ | async as user">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">{{user.displayName}}
+        </a>
+
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
+          <a class="dropdown-item" routerLink="admin/orders">Manage Orders</a>
+          <a class="dropdown-item" routerLink="admin/products">Manage Products</a>
+          <a class="dropdown-item" (click)="logout()">Logout</a>
+        </div>
+      </li> -->
+
+
+      <!-- With out repetition -->
+      <ng-template #anonymousUser>
+        <li *ngIf="!(user$| async)" class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+      </ng-template>
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown" *ngIf="user$ | async as user; else anonymousUser">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">{{user.displayName}}
         </a>
