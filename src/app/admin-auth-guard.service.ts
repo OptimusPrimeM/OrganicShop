@@ -1,3 +1,4 @@
+import { AppUser } from './models/app-user';
 import { UserService } from './user.service';
 import { AuthService } from './auth.service';
 import { CanActivate } from '@angular/router';
@@ -14,9 +15,8 @@ export class AdminAuthGuard implements CanActivate {
 
 
   canActivate(): Observable<boolean> {
-    return this.auth.user$
+    return this.auth.appUser$
       .pipe(
-        switchMap(user => this.userSerice.get(user.uid).valueChanges()),
         map(appUser => appUser.isAdmin)
       );
   }

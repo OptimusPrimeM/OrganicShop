@@ -52,15 +52,17 @@
       </ng-template>
 
       <!-- Dropdown -->
-      <li class="nav-item dropdown" *ngIf="auth.user$ | async as user; else anonymousUser">
+      <li class="nav-item dropdown" *ngIf="appUser ; else anonymousUser">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">{{user.displayName}}
+          aria-expanded="false">{{appUser.name}}
         </a>
 
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
-          <a class="dropdown-item" routerLink="admin/orders">Manage Orders</a>
-          <a class="dropdown-item" routerLink="admin/products">Manage Products</a>
+          <ng-container *ngIf="appUser.isAdmin">
+            <a class="dropdown-item" routerLink="admin/orders">Manage Orders</a>
+            <a class="dropdown-item" routerLink="admin/products">Manage Products</a>
+          </ng-container>
           <a class="dropdown-item" (click)="logout()">Logout</a>
         </div>
       </li>
