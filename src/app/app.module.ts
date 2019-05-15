@@ -1,3 +1,4 @@
+import { CategoryService } from './category.service';
 import { AdminAuthGuard as AdminAuthGuard } from './admin-auth-guard.service';
 import { UserService } from './user.service';
 import { AuthGuard } from './auth-guard.service';
@@ -81,6 +82,7 @@ import {MatButtonModule} from '@angular/material/button';
     AuthService,
     AuthGuard,
     UserService,
+    CategoryService,
     AdminAuthGuard
   ],
   bootstrap: [AppComponent]
