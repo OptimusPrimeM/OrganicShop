@@ -1,0 +1,11 @@
+
+.container {
+    max-width: 750px;
+    padding-top: 10px;
+}
+
+.mat-form-field {
+    display: grid;
+    position: relative;
+    text-align: left;
+}
