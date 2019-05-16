@@ -24,9 +24,10 @@
 
         <!-- Price -->
         <div class="md-form">
-          <input #price="ngModel" ngModel name="price" type="number" id="price" class="form-control" required>
+          <input #price="ngModel" ngModel name="price" type="number" id="price" class="form-control" required [min]="0">
           <div class="alert alert-info" role="alert" *ngIf="price.touched && price.invalid">
-            Price is Reqired!
+            <div *ngIf="price.errors.required"> Price is Reqired!</div>
+            <div *ngIf="price.errors.min">Price should be 0 or higher</div>
           </div>
           <label for="price">Price</label>
         </div>
@@ -49,9 +50,11 @@
 
         <!-- Image Url -->
         <div class="md-form">
-          <input #url="ngModel" ngModel name="imageUrl" type="text" id="imageURL" class="form-control" required>
+          <input #url="ngModel" ngModel name="imageUrl" type="text" id="imageURL" class="form-control" required url>
           <div class="alert alert-info" role="alert" *ngIf="url.touched && url.invalid">
-            Image URL is Reqired!
+            <div *ngIf="url.errors.required"> Image URL is Reqired!</div>
+            <div *ngIf="url.errors.url">Please enter valid URL </div>
+           
           </div>
           <label for="imageURL">Image URL</label>
         </div>

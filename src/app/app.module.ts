@@ -11,6 +11,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { RouterModule } from '@angular/router';
+import { CustomFormsModule } from 'ng2-validation'
 
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
@@ -48,6 +49,7 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [
     BrowserModule,
     FormsModule,
+    CustomFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
