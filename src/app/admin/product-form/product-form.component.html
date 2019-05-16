@@ -54,7 +54,7 @@
           <div class="alert alert-info" role="alert" *ngIf="url.touched && url.invalid">
             <div *ngIf="url.errors.required"> Image URL is Reqired!</div>
             <div *ngIf="url.errors.url">Please enter valid URL </div>
-           
+
           </div>
           <label for="imageURL">Image URL</label>
         </div>
@@ -71,10 +71,26 @@
 
         <!-- Featured image -->
         <div class="view overlay rounded z-depth-2">
-          <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/img%20(27).jpg" alt="Sample image">
+          <img class="img-fluid" [src]="url.value" alt="Sample image">
           <a>
             <div class="mask rgba-white-slight"></div>
           </a>
+        </div>
+        <div class="card-body">
+
+          <!-- Title -->
+          <h4 class="card-title">{{title.value}}</h4>
+          <hr>
+          <!-- Text -->
+          <p class="card-text">Some quick exampl e text to build on the card title and make up the bulk of the card's
+            content.</p>
+
+        </div>
+        <div class="card-footer px-4">
+          <span class="float-left">{{price.value | currency: 'USD'}}</span>
+          <span class="float-right">
+            {{category.value}}
+          </span>
         </div>
 
       </div>
