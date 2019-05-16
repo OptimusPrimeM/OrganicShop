@@ -8,20 +8,20 @@
         <h6 class="font-weight-bold mb-3"><i class="fas fa-utensils pr-2"></i>Food</h6>
       </a>
       <!-- Post title -->
-      <h3 class="font-weight-bold mb-3"><strong>Title of the news</strong></h3>
+      <h3 class="font-weight-bold mb-3"><strong>Add new Organic food</strong></h3>
 
       <!-- Form -->
-      <form class="text-center" style="color: #757575;">
+      <form #f="ngForm" (ngSubmit)="save(f.value)" class="text-center" style="color: #757575;">
 
         <!-- Title -->
         <div class="md-form">
-          <input type="text" id="title" class="form-control">
+          <input ngModel name="title" type="text" id="title" class="form-control">
           <label for="title">Title</label>
         </div>
 
         <!-- Price -->
         <div class="md-form">
-          <input type="number" id="price" class="form-control">
+          <input ngModel name="price" type="number" id="price" class="form-control">
           <label for="price">Price</label>
         </div>
 
@@ -30,9 +30,9 @@
         <div class="md-form">
           <mat-form-field>
             <mat-label>Category</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let c of categories$ | async" [value]="c.$key">
-                {{ c.name }}
+            <mat-select ngModel name="category">
+              <mat-option *ngFor="let c of categories$ | async" [value]="c.name">
+                {{ c.name  }}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -40,11 +40,11 @@
 
         <!-- Image Url -->
         <div class="md-form">
-          <input type="text" id="imageURL" class="form-control">
+          <input ngModel name="imageUrl" type="text" id="imageURL" class="form-control">
           <label for="imageURL">Image URL</label>
         </div>
 
-        <button class="btn btn-pink btn-md mb-lg-0 mb-4">Save</button>
+        <button type="submit" class="btn btn-pink btn-md mb-lg-0 mb-4">Save</button>
       </form>
 
 
