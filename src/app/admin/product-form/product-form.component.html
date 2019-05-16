@@ -15,13 +15,19 @@
 
         <!-- Title -->
         <div class="md-form">
-          <input ngModel name="title" type="text" id="title" class="form-control">
+          <input #title="ngModel" ngModel name="title" type="text" id="title" class="form-control" required>
+          <div class="alert alert-info" role="alert" *ngIf="title.touched && title.invalid">
+            Title is Reqired!
+          </div>
           <label for="title">Title</label>
         </div>
 
         <!-- Price -->
         <div class="md-form">
-          <input ngModel name="price" type="number" id="price" class="form-control">
+          <input #price="ngModel" ngModel name="price" type="number" id="price" class="form-control" required>
+          <div class="alert alert-info" role="alert" *ngIf="price.touched && price.invalid">
+            Price is Reqired!
+          </div>
           <label for="price">Price</label>
         </div>
 
@@ -30,17 +36,23 @@
         <div class="md-form">
           <mat-form-field>
             <mat-label>Category</mat-label>
-            <mat-select ngModel name="category">
+            <mat-select #category="ngModel" ngModel name="category" required>
               <mat-option *ngFor="let c of categories$ | async" [value]="c.name">
                 {{ c.name  }}
               </mat-option>
             </mat-select>
+            <div class="alert alert-info" role="alert" *ngIf="category.touched && category.invalid">
+              Category is Reqired!
+            </div>
           </mat-form-field>
         </div>
 
         <!-- Image Url -->
         <div class="md-form">
-          <input ngModel name="imageUrl" type="text" id="imageURL" class="form-control">
+          <input #url="ngModel" ngModel name="imageUrl" type="text" id="imageURL" class="form-control" required>
+          <div class="alert alert-info" role="alert" *ngIf="url.touched && url.invalid">
+            Image URL is Reqired!
+          </div>
           <label for="imageURL">Image URL</label>
         </div>
 
