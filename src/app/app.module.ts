@@ -30,6 +30,8 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserAnimationsModule,
     MatSelectModule,
     MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'products', component: ProductsComponent },

@@ -1,1 +1,25 @@
 <a class="btn blue-gradient" routerLink="/admin/products/new">New product</a>
+
+<div class="card hoverable">
+    <table class="table table-striped table-responsive-md btn-table">
+
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let p of products ">
+                <td>{{p.title}}</td>
+                <td>{{p.price}}</td>
+                <td>
+                    <button mat-button color="primary" [routerLink]="['/admin/products/', p.key]">Update</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
