@@ -52,4 +52,9 @@ export class ProductFormComponent {
     this.router.navigate(['/admin/products']);
   }
 
+  delete() {
+    this.productService.delete(this.id);
+    this.router.navigate(['/admin/products']);
+  }
+
 }

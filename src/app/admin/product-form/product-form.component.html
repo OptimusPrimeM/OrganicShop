@@ -63,6 +63,8 @@
         </div>
 
         <button type="submit" class="btn btn-pink btn-md mb-lg-0 mb-4">Save</button>
+        <a href="" class="btn pink darken-4 btn-md mb-lg-0 mb-4" data-toggle="modal"
+          data-target="#centralModalDanger">Delete</a>
       </form>
 
 
@@ -102,3 +104,38 @@
   </div>
 
 </section>
+
+
+<!-- Central Modal Medium Danger -->
+<div class="modal fade right" id="centralModalDanger" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-danger" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">Do you want to delete?</p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto nulla aperiam blanditiis
+            ad consequatur in dolores culpa, dignissimos, eius non possimus fugiat. Esse ratione fuga, enim,
+            ab officiis totam.</p>
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn  deep-orange darken-3" data-dismiss="modal" (click)="delete()">Delete</button>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
