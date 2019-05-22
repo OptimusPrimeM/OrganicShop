@@ -15,7 +15,8 @@
 
         <!-- Title -->
         <div class="md-form">
-          <input #title="ngModel" ngModel name="title" type="text" id="title" class="form-control" required>
+          <input #title="ngModel" [(ngModel)]="product.title" name="title" type="text" id="title" class="form-control"
+            required>
           <div class="alert alert-info" role="alert" *ngIf="title.touched && title.invalid">
             Title is Reqired!
           </div>
@@ -24,7 +25,8 @@
 
         <!-- Price -->
         <div class="md-form">
-          <input #price="ngModel" ngModel name="price" type="number" id="price" class="form-control" required [min]="0">
+          <input #price="ngModel" [(ngModel)]="product.price" name="price" type="number" id="price" class="form-control"
+            required [min]="0">
           <div class="alert alert-info" role="alert" *ngIf="price.touched && price.invalid">
             <div *ngIf="price.errors.required"> Price is Reqired!</div>
             <div *ngIf="price.errors.min">Price should be 0 or higher</div>
@@ -37,7 +39,7 @@
         <div class="md-form">
           <mat-form-field>
             <mat-label>Category</mat-label>
-            <mat-select #category="ngModel" ngModel name="category" required>
+            <mat-select #category="ngModel" [(ngModel)]="product.category" name="category" required>
               <mat-option *ngFor="let c of categories$ | async" [value]="c.name">
                 {{ c.name  }}
               </mat-option>
@@ -50,7 +52,8 @@
 
         <!-- Image Url -->
         <div class="md-form">
-          <input #url="ngModel" ngModel name="imageUrl" type="text" id="imageURL" class="form-control" required url>
+          <input #url="ngModel" [(ngModel)]="product.imageUrl" name="imageUrl" type="text" id="imageURL"
+            class="form-control" required url>
           <div class="alert alert-info" role="alert" *ngIf="url.touched && url.invalid">
             <div *ngIf="url.errors.required"> Image URL is Reqired!</div>
             <div *ngIf="url.errors.url">Please enter valid URL </div>
@@ -71,7 +74,7 @@
 
         <!-- Featured image -->
         <div class="view overlay rounded z-depth-2">
-          <img class="img-fluid" [src]="url.value" alt="Sample image">
+          <img class="img-fluid" [src]="product.imageUrl" alt="Sample image" *ngIf="product.imageUrl">
           <a>
             <div class="mask rgba-white-slight"></div>
           </a>
@@ -79,7 +82,7 @@
         <div class="card-body">
 
           <!-- Title -->
-          <h4 class="card-title">{{title.value}}</h4>
+          <h4 class="card-title">{{product.title}}</h4>
           <hr>
           <!-- Text -->
           <p class="card-text">Some quick exampl e text to build on the card title and make up the bulk of the card's
@@ -87,7 +90,7 @@
 
         </div>
         <div class="card-footer px-4">
-          <span class="float-left">{{price.value | currency: 'USD'}}</span>
+          <span class="float-left">{{product.price | currency: 'USD'}}</span>
           <span class="float-right">
             {{category.value}}
           </span>

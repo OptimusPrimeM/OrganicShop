@@ -1,3 +1,5 @@
+<link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+
 <a class="btn blue-gradient" routerLink="/admin/products/new">New product</a>
 
 <div class="card hoverable">
@@ -16,7 +18,7 @@
                 <td>{{p.title}}</td>
                 <td>{{p.price}}</td>
                 <td>
-                    <button mat-button color="primary" [routerLink]="['/admin/products/', p.key]">Update</button>
+                    <button mat-button color="primary" class="updateButtonFont" [routerLink]="['/admin/products/', p.key]">Update</button>
                 </td>
             </tr>
         </tbody>

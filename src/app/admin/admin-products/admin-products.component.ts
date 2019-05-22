@@ -22,7 +22,7 @@ export class AdminProductsComponent {
     ).subscribe(items => {
       return items.map(
         item => {
-          console.log(this.products);
+          // console.log(this.products);
           this.products = items;
         });
     });
