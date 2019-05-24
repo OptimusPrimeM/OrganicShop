@@ -12,6 +12,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { RouterModule } from '@angular/router';
 import { CustomFormsModule } from 'ng2-validation';
+import { DataTableModule } from 'angular5-data-table';
 
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
@@ -33,10 +34,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     BsNavbarComponent,
+    DataTableModule,
     HomeComponent,
     ProductsComponent,
     ShoppingCartComponent,
